@@ -22,18 +22,14 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
 	UPROPERTY(EditAnywhere)
-		int32 inputA = 0;
+		FVector TestVector = FVector(1,2,3); 
 	UPROPERTY(EditAnywhere)
-		int32 inputB = 0;
+		float X = 0;
 	UPROPERTY(EditAnywhere)
-		int32 inputAplusB = 0;
+		float Y = 10;
+	UPROPERTY(EditAnywhere)
+		float Z = 0;
 
-	//Test varaibles
-	UPROPERTY(EditAnywhere)
-	int32 testInt = 99;
-	UPROPERTY(EditAnywhere)
-	bool testBool = true;
-	UPROPERTY(EditAnywhere)
-	float testFloat = 5.5; 
 };
