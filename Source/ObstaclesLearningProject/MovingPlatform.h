@@ -25,13 +25,10 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 	UPROPERTY(EditAnywhere)
-		FVector TestVector = FVector(1, 2, 3);
+		FVector MyVector = FVector(1, 2, 3);
 	UPROPERTY(EditAnywhere)
 		float X = 0;
-	UPROPERTY(EditAnywhere)
-		float Y = 0;
-	UPROPERTY(EditAnywhere)
-		float Z = 0;
+
 
 
 };
