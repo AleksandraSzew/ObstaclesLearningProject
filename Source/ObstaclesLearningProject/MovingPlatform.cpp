@@ -15,9 +15,8 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-	X = TestVector.X; 
-	Y = TestVector.Y;
-	Z = TestVector.Z;
+
+	SetActorLocation(TestVector);
 	
 }
 

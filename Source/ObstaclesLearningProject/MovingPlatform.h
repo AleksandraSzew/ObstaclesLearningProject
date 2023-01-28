@@ -19,17 +19,19 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	
 	UPROPERTY(EditAnywhere)
-		FVector TestVector = FVector(1,2,3); 
+		FVector TestVector = FVector(1, 2, 3);
 	UPROPERTY(EditAnywhere)
 		float X = 0;
 	UPROPERTY(EditAnywhere)
-		float Y = 10;
+		float Y = 0;
 	UPROPERTY(EditAnywhere)
 		float Z = 0;
+
 
 };
