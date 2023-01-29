@@ -15,8 +15,6 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-
-	SetActorLocation(MyVector);
 	
 }
 
@@ -24,11 +22,21 @@ void AMovingPlatform::BeginPlay()
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
+	//MovePlatform forwards
+		//Get current location
+	FVector currentLocation = GetActorLocation();
+	
+		//Add vector to that loction
+	currentLocation = currentLocation + (platformVelocity * DeltaTime);
+		//Set the location
+	SetActorLocation(currentLocation);
+	//Send back platform
+		//check location
+		//reverse direction
+		
 
-	FVector LocalVector = MyVector;
-	LocalVector.Z = LocalVector.Z + 1;
 
-	MyVector.X = MyVector.X + 1;
-	SetActorLocation(LocalVector);
+
 }
 
