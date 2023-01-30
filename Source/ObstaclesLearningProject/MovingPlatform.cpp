@@ -18,7 +18,9 @@ void AMovingPlatform::BeginPlay()
 	
 	startLocation = GetActorLocation();
 	
-	UE_LOG(LogTemp, Display, TEXT("Configured Moved Distance: %f"), maxDistance);
+
+	FString MyString = GetName();
+	UE_LOG(LogTemp, Display, TEXT("Begin play: %s"), *MyString);
 	//UE_LOG(LogTemp, Warning, TEXT("DUPA"));
 	//UE_LOG(LogTemp, Error, TEXT("DUPA"));
 }
@@ -41,17 +43,17 @@ void AMovingPlatform::Tick(float DeltaTime)
 	platformDistance = FVector::Dist(startLocation, currentLocation);
 		//reverse direction
 	if (platformDistance >= maxDistance) {
-		
+		//debug if over shoot is more than 5 
 		float overShoot = platformDistance - maxDistance;
+		if (overShoot > 5) {
+			FString NameString = GetName();
+			UE_LOG(LogTemp, Warning, TEXT("overshooted: %f of %s"), overShoot, *NameString);
+		}
 		FVector moveDirection = platformVelocity.GetSafeNormal();
 		startLocation = startLocation + moveDirection * maxDistance;
 		SetActorLocation(startLocation);
 		platformVelocity = -platformVelocity;	
 
-		if (overShoot < 1)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("overshooted: %f"), overShoot);
-		}
 	}
 	
 		
