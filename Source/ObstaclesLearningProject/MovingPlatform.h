@@ -34,10 +34,13 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Moving platform")
 	float maxDistance = 100;
 
+	UPROPERTY(EditAnywhere, Category = "Rotating platform")
+		FRotator RotationVelocity;
+
 
 	FVector startLocation;
 	void MovePlatfrom(float DeltaTime);
 	void RotatePlatform(float DeltaTime);
-	bool shouldPlatformReturn();
-	float GetDistanceMoved();
+	bool shouldPlatformReturn() const;
+	float GetDistanceMoved() const;
 };
